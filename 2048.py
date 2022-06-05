@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import random
+ 
 
 class Board:
     bg_color={
@@ -50,7 +51,7 @@ class Board:
                 font=('arial',22,'bold'),width=4,height=2)
                 l.grid(row=i,column=j,padx=7,pady=7)
 
-                rows.append(l);
+                rows.append(l)
             self.board.append(rows)
         self.gameArea.grid()
 
@@ -123,8 +124,8 @@ class Board:
                     fg=self.color.get(str(self.gridCell[i][j])))
 
 class Game:
-    def __init__(self,gamepanel):
-        self.gamepanel=gamepanel
+    def __init__(self):
+        self.gamepanel = gamepanel
         self.end=False
         self.won=False
 
@@ -210,10 +211,8 @@ class Game:
             self.gamepanel.random_cell()
 
         self.gamepanel.paintGrid()
-
-
 gamepanel =Board()
-game2048 = Game( gamepanel)
+game2048 = Game()
 game2048.start()
 
 # Coded with 💙 by Mr. Unity Buddy
